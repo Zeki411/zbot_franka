@@ -351,13 +351,16 @@
             </joint>
         </xacro:macro>
 
-        <xacro:configure_joint joint_name="$panda_joint1" initial_position="0.0"/>
-        <xacro:configure_joint joint_name="$panda_joint2" initial_position="${-pi/4}"/>
-        <xacro:configure_joint joint_name="$panda_joint3" initial_position="0.0"/>
-        <xacro:configure_joint joint_name="$panda_joint4" initial_position="${-3*pi/4}"/>
-        <xacro:configure_joint joint_name="$panda_joint5" initial_position="0.0"/>
-        <xacro:configure_joint joint_name="$panda_joint6" initial_position="${pi/2}"/>
-        <xacro:configure_joint joint_name="$panda_joint7" initial_position="${pi/4}"/>
+        <xacro:configure_joint joint_name="panda_joint1" initial_position="0.0"/>
+        <xacro:configure_joint joint_name="panda_joint2" initial_position="${-pi/4}"/>
+        <xacro:configure_joint joint_name="panda_joint3" initial_position="0.0"/>
+        <xacro:configure_joint joint_name="panda_joint4" initial_position="${-3*pi/4}"/>
+        <xacro:configure_joint joint_name="panda_joint5" initial_position="0.0"/>
+        <xacro:configure_joint joint_name="panda_joint6" initial_position="${pi/2}"/>
+        <xacro:configure_joint joint_name="panda_joint7" initial_position="${pi/4}"/>
+        <xacro:configure_joint joint_name="panda_finger_joint1" initial_position="0.0"/>
+        <xacro:configure_joint joint_name="panda_finger_joint2" initial_position="0.0"/>
+
 
     </ros2_control>
 
