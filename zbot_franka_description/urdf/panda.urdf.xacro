@@ -3,10 +3,18 @@
 
     <link name="world"/>
 
+    <joint name="world_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+    </joint>
+
+    <link name="base_link"/>
+
     <joint name="fixed" type="fixed">
-      <parent link="world"/>
+      <parent link="base_link"/>
       <child link="panda_link0"/>
     </joint>
+    
 
     <link name="panda_link0">
         <visual>
@@ -291,46 +299,11 @@
         <dynamics damping="0.3" />
     </joint>
 
-    <!-- <gazebo reference="panda_link0">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo>
-
-    <gazebo reference="panda_link1">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo>
-
-    <gazebo reference="panda_link2">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo>
-
-    <gazebo reference="panda_link3">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo>
-
-    <gazebo reference="panda_link4">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo>
-
-    <gazebo reference="panda_link5">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo>
-
-    <gazebo reference="panda_link6">
-        <material>Gazebo/Orange</material>
-        <turnGravityOff>true</turnGravityOff>
-    </gazebo> -->
-
 
     <!-- ros_control plugin -->
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-            <parameters>$(find zbot_franka_control)/config/ros2_control_gazebo.yaml</parameters>
+            <parameters>$(find zbot_franka_control)/config/ros2_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 

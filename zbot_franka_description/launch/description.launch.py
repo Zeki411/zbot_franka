@@ -11,10 +11,19 @@ def generate_launch_description():
     load_gripper = LaunchConfiguration('load_gripper')
 
     zbot_franka_xacro_file = os.path.join(get_package_share_directory('zbot_franka_description'), 'urdf',
-                                     'panda_moveit2.urdf.xacro')
+                                     'panda.urdf.xacro')
     
     robot_description_content = Command(
         [FindExecutable(name='xacro'), ' ', zbot_franka_xacro_file, ' hand:=', load_gripper])
+    
+    # Static TF
+    static_tf = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="static_transform_publisher",
+        output="log",
+        arguments=["--frame-id", "world", "--child-frame-id", "base_link"],
+    )
 
     robot_state_publisher_node = Node(
             package='robot_state_publisher',
@@ -28,5 +37,7 @@ def generate_launch_description():
 
     ld.add_action(load_gripper_declare)
     ld.add_action(robot_state_publisher_node)
+    # ld.add_action(static_tf)
 
+    
     return ld
