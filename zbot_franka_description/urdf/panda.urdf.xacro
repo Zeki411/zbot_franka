@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <link name="world"/>
+    <!-- <link name="world"/>
 
     <joint name="world_joint" type="fixed">
         <parent link="world"/>
@@ -13,7 +13,7 @@
     <joint name="fixed" type="fixed">
       <parent link="base_link"/>
       <child link="panda_link0"/>
-    </joint>
+    </joint> -->
     
 
     <link name="panda_link0">
@@ -300,8 +300,7 @@
     </joint>
 
 
-    <!-- ros_control plugin -->
-    <gazebo>
+    <!-- <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>$(find zbot_franka_control)/config/ros2_controllers.yaml</parameters>
         </plugin>
@@ -335,7 +334,7 @@
         <xacro:configure_joint joint_name="panda_finger_joint2" initial_position="0.0"/>
 
 
-    </ros2_control>
+    </ros2_control> -->
 
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot name="panda_main" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+    <xacro:include filename="$(find zbot_franka_description)/urdf/panda.urdf.xacro"/>
+    <xacro:include filename="$(find zbot_franka_description)/urdf/panda.gazebo.xacro"/>
+    <xacro:include filename="$(find zbot_franka_description)/urdf/panda.ros2_control.xacro"/>
+
+    <xacro:panda_arm_ros2_control ns="panda" robot_ip="0.0.0.0" use_gazebo="true" use_fake_hardware="false" fake_sensor_commands="false"/>
+
+</robot>
